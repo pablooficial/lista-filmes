@@ -1,0 +1,36 @@
+<div class="container my-4">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="movie-details">
+        <h2>{{ movie.title }}</h2>
+        <p>{{ movie.overview }}</p>
+        <p><strong>Actor:</strong> {{ movie.actor }}</p>
+        <p>
+          <strong>Review:</strong>
+          <span
+            *ngFor="let star of [].constructor(10); let i = index"
+            class="star"
+          >
+            <span *ngIf="movie.vote_average >= i + 1">&#9733;</span>
+            <span *ngIf="movie.vote_average > i && movie.vote_average < i + 1"
+              >&#9734;</span
+            >
+            <span *ngIf="movie.vote_average <= i">&#9734;</span>
+          </span>
+        </p>
+        <button class="btn btn-primary" (click)="toggleFavorite(movie)">
+          {{ movie.isFavorite ? "Unfavorite" : "Favorite" }} ♥
+        </button>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="movie-poster">
+        <img
+          [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
+          alt="Movie poster"
+          class="img-fluid"
+        />
+      </div>
+    </div>
+  </div>
+</div>

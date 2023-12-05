@@ -1,0 +1,16 @@
+<div class="container my-4">
+  <div class="row">
+    <div class="col-12 col-md">
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        class="form-control"
+        placeholder="Search for movies..."
+      />
+    </div>
+    <div class="col-12 col-md-auto mt-2 mt-md-0">
+      <button (click)="onSearch()" class="btn btn-primary me-2">Search</button>
+      <button (click)="onReset()" class="btn btn-secondary">Reset</button>
+    </div>
+  </div>
+</div>

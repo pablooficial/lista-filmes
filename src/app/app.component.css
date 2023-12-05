@@ -1,0 +1,7 @@
+router-outlet {
+  flex: 1 0 auto; /* Flex-grow to fill available space */
+}
+
+app-footer {
+  flex-shrink: 0; /* Prevent footer from shrinking */
+}
